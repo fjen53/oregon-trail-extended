@@ -22,7 +22,7 @@ class Doctor extends Traveler {
         super(name)
     }
     heal(traveler) {
-        this.isHealthy = true
+        traveler.isHealthy = true
     }
 }
 class Hunter extends Traveler {
@@ -36,15 +36,15 @@ class Hunter extends Traveler {
 
     }
     eat() {
-        if (this.food <= 1) {
+        if (this.food < 2) {
             return this.isHealthy = false;
         } else {
-            this.food -= 2
+            this.food = 0
         }
     }
     giveFood(traveler, numOfFoodUnits) {
-        if (this.food > this.food.length) {
-            this.food[this.food.length] = numOfFoodUnits;
+        if (this.food >= 1) {
+            this.food = -1;
         } else {
             traveler = numOfFoodUnits
         }
